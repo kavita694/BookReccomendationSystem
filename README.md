@@ -1,36 +1,32 @@
-# BookReccomendationSystem
-Objective
+Good Old Friend - A book Recomemder for all the book lovers out their .To save thier time and easily provide them their Favorite books based on the genre they prefer to read, most liked content and the books that are highly rated by the users.
 
-The main objective is to create a book recommendation system for users. Recommender systems are really critical in some industries as they can generate a huge amount of income when they are efficient or also be a way to stand out significantly from competitors.
+Good old friend is a simple yet powerfull web app made using flask framework to recommed your favourate book using content based filtering and cosine similarity metrices.
 
-Methods Used
+Front-end : Developed using HTML and CSS.
 
-Descriptive Statistics Data Visualization Machine Learning
+Back-end : Flask Framework.
 
-Technologies
+How to run ?
 
-Python Pandas Numpy Matplotlib Seaborn Scikit-learn Surprise
+Steps:
 
-Data
+Clone the repositary in your local device.
+Install all the requirements using :
+pip install -r requirements.txt
 
-The Book-Crossing dataset comprises 3 files.
+Then extract the bookdataset.zip in your directory Then change the path of dataset in the recomm.py file in line number 13 and 16.
 
-Users : Contains the users. Note that user IDs (User-ID) have been anonymized and map to integers. Demographic data is provided (Location, Age) if available. Otherwise, these fields contain NULL values.
+Now simply run the server in terminal using
 
-Books : Books are identified by their respective ISBN. Invalid ISBNs have already been removed from the dataset. Moreover, some content-based information is given (Book-Title, Book-Author, Year-Of-Publication, Publisher), obtained from Amazon Web Services. Note that in the case of several authors, only the first is provided. URLs linking to cover images are also given, appearing in three different flavors (Image-URL-S, Image-URL-M, Image-URL-L), i.e., small, medium, large. These URLs point to the Amazon website.
+python run.py
 
-Ratings : Contains the book rating information. Ratings (Book-Rating) are either explicit, expressed on a scale from 1-10 (higher values denoting higher appreciation), or implicit, expressed by 0.
+ALGORITHMS USED
+CONTENT BASED FILTERING: Content based recommender systems take into account the data provided by the user both directly or indirectly. For example, age can be used to determine classes of products or items reviewed or bought by the user. This type of recommender system relies on characteristics of object. New content can be quickly recommended to the user. These type of systems does not take into account behavior/ data about other users in the systems but here things are little changed.
 
-Project Description
+COSINE SIMILARITY: Cosine similarity is a metric used to measure how similar the documents are irrespective of their size. Mathematically, it measures the cosine of the angle between two vectors projected in a multi-dimensional space. The cosine similarity is advantageous because even if the two similar documents are far apart by the Euclidean distance (due to the size of the document), chances are they may still be oriented closer together. The smaller the angle, higher the cosine similarity.
 
-EDA - Performed exploratory data analysis on numerical and categorical data.
+Similarity Score :
 
-Data Cleaning - Missing value imputation,Outlier Treaatment
+How does it decide which item is most similar to the item user likes? Here come the similarity scores.
 
-Feature Selection - Used User-ID,ISBN and Books-Rating for model development.
-
-Model development - Tried Popularity based model and Collaborative filtering (Both Memory based and Model based).
-
-Needs of this project
-
-data exploration data processing/cleaning recommendation system developer
+It is a numerical value ranges between zero to one which helps to determine how much two items are similar to each other on a scale of zero to one. This similarity score is obtained measuring the similarity between the text details of both of the items. So, similarity score is the measure of similarity between given text details of two items. This can be done by cosine-similarity.
